@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180821113156) do
+ActiveRecord::Schema.define(version: 20180821140820) do
+
+  create_table "table_mentions", id: false, force: :cascade do |t|
+    t.integer "mentioned_by"
+    t.integer "mention_subject"
+  end
 
   create_table "user_connections", id: false, force: :cascade do |t|
     t.integer "follower_id"
