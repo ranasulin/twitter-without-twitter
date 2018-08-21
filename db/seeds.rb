@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+# Create Users
+15.times do
+  user = User.create(
+    name:     Faker::Name.name,
+  )
+end
+users = User.all
+
+10.times do
+  follower, followee = users.sample(2)
+  followee.followers << follower
+end
+
+puts "Seed finished"
+puts "#{User.count} users created"
