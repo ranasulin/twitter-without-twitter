@@ -53,3 +53,4 @@ group :development do
 end
 
 gem 'faker'
+gem 'bootstrap-sass'
